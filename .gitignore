@@ -1,0 +1,12 @@
+build
+node_modules
+certs/*.key
+certs/*.pem
+*.cache
+*.log
+*.vscode
+*.env
+*.dev
+.DS_Store
+
+\.swp

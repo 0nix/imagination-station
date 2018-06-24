@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Imagination Station | Welcome Aboard</title>
+	<link href="https://fonts.googleapis.com/css?family=Andada|Lora" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="@styles/style.css">
+	<script src="@js/deps.js" type="text/javascript"></script>
+</head>
+<body class="site">
+  <div class="sidebar ui top menu visible">
+  
+    <div class="header item">Imagination Station</div>
+    <a href="/home" class="item primary">
+      <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+      Your Desk
+    </a>
+    <a class="item">Preferences</a>
+    <a href="/logout" class="floated right item">Logout</a>
+    
+  </div>
+  <rev-view-modal></rev-view-modal>
+  <rev-comparison-modal></rev-comparison-modal>
+  <revdoc-modal></revdoc-modal>
+  <main class="site-content">
+    <div style="margin-bottom: 0;" class="ui grid massive message">
+        <div class="ui container">
+          <div class="row">
+            <div class="h1 ui huge header" style="margin-top: 1.75em; margin-bottom: 0.75em;"> A history of your progress.</div>
+        </div>
+      </div>
+    </div>
+    <div class="ui compact bottom attached vertically fitted menu">
+      <div class="item"><span id="is-current-date"></span></div>
+      <a class="item is-newdocument-button"><i class="fa fa-plus" aria-hidden="true"></i></a>
+      <div class="right menu">
+        <div class="ui dropdown primary item">
+          Notifications
+          <a class="ui circular label">99+</a>
+          <i class="dropdown icon"></i>
+            <div class="menu">
+              <a class="item">Your deadline for Networld is coming up!</a>
+              <a class="item">Your job posting has gotten a response.</a>
+              <a class="item">Hello there!</a>    
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="ui grid container">
+      <div class="sixteen wide column">
+        <revlist></revlist>
+      </div>
+    </div>
+  </main>
+  <div class="ui vertical">
+    <footer></footer>
+  </div>
+<script src="@js/tags.js" type="text/javascript"></script>
+<script src="@js/my.js" type="text/javascript"></script>
+<script> is.rev.runRevision()</script>
+</body>
+</html>

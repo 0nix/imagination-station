@@ -1,0 +1,215 @@
+.site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+.site-content {
+  flex: 1;
+}
+
+.ui.menu{
+	margin: 0;
+}
+#is-countbar{
+	width: 100%;
+  display: none;
+}
+.uptop{
+	position:fixed; 
+	width: 100%;
+}
+div.uptop > button.menutoggle{
+	margin-top: 0.5em; 
+	margin-left: 1.5em;
+	display:none;
+}
+
+/** INDEX **/
+.is-index#jumbo{
+	background-color:rgba(0, 0, 0, 0.45);
+	padding-bottom: 4em;
+}
+.is-index.masthead {
+      max-height: 1300px;
+      padding: 1em 0em;
+}
+.is-menu-responsive {
+  width: 100%;
+}
+.is-index.masthead .text.container{
+      padding-top: 5em;
+      padding-bottom: 5em;
+}
+.is-index .bigbg{
+	background-image: url("../img/dew.jpg");
+	background-size: cover;
+
+	height: 100%;
+    width: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -10;
+}
+.is-index .serif {
+	font-family: 'Andada', serif !important;
+}
+.is-index.hidden.menu {
+      display: none;
+    }
+
+.is-index.masthead.segment {
+      min-height: 700px;
+      padding: 1em 0em;
+}
+.is-index.masthead .logo.item img {
+      margin-right: 1em;
+}
+.is-index.masthead .ui.menu .ui.button {
+      margin-left: 0.5em;
+    }
+.is-index.masthead h1.ui.header {
+      margin-top: 3em;
+      margin-bottom: 0em;
+      font-size: 4em;
+      font-weight: normal;
+}
+.is-index.masthead h2 {
+      font-size: 1.7em;
+      font-weight: normal;
+}
+.is-index.masthead i.button-object {
+	margin-left: 0.5em;
+}
+.is-index.is-index.ui.vertical.stripe {
+      padding: 8em 0em;
+    }
+.is-index.ui.vertical.stripe h3 {
+      font-size: 2em;
+    }
+.is-index.ui.vertical.stripe .button + h3,
+.is-index.ui.vertical.stripe p + h3 {
+      margin-top: 3em;
+    }
+.is-index.ui.vertical.stripe .floated.image {
+      clear: both;
+    }
+.is-index.ui.vertical.stripe p {
+      font-size: 1.33em;
+    }
+.is-index.ui.vertical.stripe .horizontal.divider {
+      margin: 3em 0em;
+    }
+.is-index.footer.segment {
+      padding: 5em 0em;
+    }
+
+.is-index.secondary.pointing.menu .toc.item {
+      display: none;
+}
+.is-home-hello {
+    padding: 2.5em 1.5em;
+    position: relative;
+    min-height: 1em;
+    margin: 2.75em 0em;
+    line-height: 1.4285em;
+    color: rgba(0, 0, 0, 0.87);
+    background: #f8f8f9;
+}
+.is-home-document-header, .is-revs-header{
+  margin-bottom: 0.5em;
+}
+.is-home-sorter {
+  float:right;
+}
+document > .ui.attached.segment, revision > .ui.attached.segment{
+  margin-bottom: 1.0em;
+}
+#is-editor-toolbar{
+  margin-top: 6em;
+  position: fixed;
+  left: 500px;
+}
+#is-toolbar-wrapper, #is-editor-toolbar{
+  width: 30px;
+  padding-right: 2.5em;
+  border: 0;
+}
+#is-editor-wrapper{
+  /*margin-top: 6em;*/
+  padding-left: 0px;
+  padding-right: 0px;
+  margin: 0;
+  border-left: 1px solid rgba(34, 36, 38, 0.15);
+  border-right: 1px solid rgba(34, 36, 38, 0.15);
+}
+#is-editor {
+  padding-top: 8em;
+  border: 0px solid;
+  padding-left: 1em;
+  padding-right: 1em;
+  top: -1em;
+  min-height: 100vh;
+  /*border-left: 1px solid rgba(34, 36, 38, 0.15);
+  border-right: 1px solid rgba(34, 36, 38, 0.15);*/
+}
+
+#is-editor h1, #is-editor h2, #is-editor h3, #is-editor p{
+font-family: 'Noto Serif', serif;
+text-indent: 5%;
+}
+#is-editor p{
+  line-height: 2.5em;
+}
+#is-editor-grid{
+  padding: 0;
+}
+#is-editor-current-wc-input{
+  opacity: 1;
+}
+.is-time-display{
+  opacity: 1 !important;
+  width:70px !important;
+}
+#is-timer{
+  /*margin-top: 0.5em; */
+  display: inline-flex;
+}
+
+.is-timer-wrapper{
+  display: inline-flex;
+  padding: 3px;
+}
+.is-timer-wrapper > span {
+  padding-top: 10px;
+}
+
+.is-timer-wrapper > .smalltext{
+  text-align: center;
+  padding-top: 10px;
+  padding-left: 3px;
+}
+
+    @media only screen and (max-width: 700px) {
+      .ui.fixed.menu {
+        display: none !important;
+      }
+      .secondary.pointing.menu .item,
+      .secondary.pointing.menu .menu {
+        display: none;
+      }
+      .secondary.pointing.menu .toc.item {
+        display: block;
+      }
+      .masthead.segment {
+        min-height: 350px;
+      }
+      .masthead h1.ui.header {
+        font-size: 2em;
+        margin-top: 1.5em;
+      }
+      .masthead h2 {
+        margin-top: 0.5em;
+        font-size: 1.5em;
+      }
+    }

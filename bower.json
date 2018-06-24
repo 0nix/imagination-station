@@ -1,0 +1,36 @@
+{
+  "name": "imstation",
+  "description": "Imagination Station build",
+  "main": "./main.js",
+  "authors": [
+    "0nix <boundlessimagination@gmail.com>"
+  ],
+  "license": "Proprietary",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.0",
+    "rxjs": "^4.1.0",
+    "medium-editor": "^5.21.0",
+    "rxjs-jquery": "^1.1.7",
+    "semantic": "semantic-ui#^2.2.2",
+    "redux": "https://npmcdn.com/redux/dist/redux.js",
+    "toastr": "^2.1.3",
+    "moment": "^2.18.1",
+    "riot-route": "^3.1.1",
+    "lodash": "^4.17.4",
+    "modernizr": "^3.5.0",
+    "file-saver": "^1.3.3",
+    "html-docx-js": "^0.3.1",
+    "jszip": "^3.1.4",
+    "riot": "^3.10.1"
+  }
+}

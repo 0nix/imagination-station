@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="@styles/style.css">
+	<link href="//cdn.quilljs.com/1.3.1/quill.snow.css" rel="stylesheet">
+	<link href="//cdn.quilljs.com/1.3.1/quill.bubble.css" rel="stylesheet">
+	<script src="https://www.gstatic.com/firebasejs/3.2.0/firebase.js"></script>
+	<script src="//cdn.quilljs.com/1.3.1/quill.js"></script>
+	<script src="@js/deps.js" type="text/javascript"></script>
+
+</head>
+<body>
+	<div class="ui modal is-editor-prefs">
+		<div class="header">Editor Preferences</div>
+		<div class="content" id="is-editor-grid">
+			<div class="ui equal width padded grid">
+				<div class="row">
+				    <div class="column">
+					    <div class="ui form">
+						  <div class="grouped fields">
+						    <div class="field">
+						    	<div class="ui toggle checkbox">
+								  <input type="checkbox" name="wbar">
+								  <label>Word Count Bar</label>
+								</div>
+						    </div>
+						    <div class="field">
+						    	 <label>Current Word Count</label>
+							    <div class="ui right labeled input">
+								  <input id="is-editor-current-wc-input" type="number" min="0" disabled>
+								  <div class="ui basic label">
+								    words
+								  </div>
+								</div>
+						    </div>
+						    <div class="field is-wcbar-setting">
+						    	 <label>Goal Word Count</label>
+							    <div class="ui right labeled input">
+
+								  <input id="is-editor-current-gc-input" min="0" type="number">
+								  <div class="ui basic label">
+								    words
+								  </div>
+								</div>
+						    </div>
+						    <div class="grouped fields is-wcbar-setting">
+							    <div class="field">
+							      <div class="ui radio checkbox">
+							        <input type="radio" name="wbaropt" option="ABS">
+							        <label>Entire Document</label>
+							      </div>
+							    </div>
+							    <div class="field">
+							      <div class="ui radio checkbox">
+							        <input type="radio" name="wbaropt" option="REL">
+							        <label>Current Count + Your Goal</label>
+							      </div>
+							    </div>
+					    	</div>
+						  </div>
+						</div>
+				    </div>
+				    <div class="column">
+					    <div class="ui form">
+					    	<div class="grouped fields">
+					    		<label>Editing Bar Position</label>
+							    <div class="field">
+							      <div class="ui radio checkbox">
+							        <input type="radio" name="bar-position" checked="checked" option="left-barpos">
+							        <label>Left</label>
+							      </div>
+							    </div>
+							    <div class="field">
+							      <div class="ui radio checkbox">
+							        <input type="radio" name="bar-position" option="right-barpos">
+							        <label>Right</label>
+							      </div>
+							    </div>
+					    	</div>
+						</div>
+					</div>
+			  	</div>
+			  	<div class="row">
+			    	<div class="column">
+					    <div class="ui form">
+						  <div class="grouped fields">
+						    <div class="field">
+						    	<div class="ui toggle checkbox">
+								  <input type="checkbox" name="timer">
+								  <label>Timer</label>
+								</div>
+						    </div>
+						    <div class="field is-timebar-setting">
+						    	 <label>Current Timer</label>
+							    <div class="ui equal width padded grid">
+  									<div class="column">
+  										<div class="ui right labeled input">
+  										<input type="number" class="is-time-display" name="timer-dis-hr" min="0" disabled value="0">
+  										<div class="ui basic label">HR</div>
+  										</div>
+  									</div>
+  									<div class="column">
+  										<div class="ui right labeled input">
+  										<input type="number" class="is-time-display" name="timer-dis-min" min="0" disabled value="0">
+  										<div class="ui basic label">MIN</div>
+  										</div>
+  									</div>
+  									<div class="column">
+  										<div class="ui right labeled input">
+  										<input type="number" class="is-time-display" name="timer-dis-sec" min="0" disabled value="0">
+  										<div class="ui basic label">SEC</div>
+  										</div>
+  									</div>
+  								</div>
+						    </div>
+						    <div class="field is-timebar-setting">
+						    	 <label>Set Timer</label>
+							    <div class="ui equal width padded grid">
+  									<div class="column">
+  										<div class="ui right labeled input">
+  										<input type="number" class="is-time-display" name="timer-set-hr" min="0" value="0">
+  										<div class="ui basic label">HR</div>
+  										</div>
+  									</div>
+  									<div class="column">
+  										<div class="ui right labeled input">
+  										<input type="number" class="is-time-display" name="timer-set-min" min="0" value="0">
+  										<div class="ui basic label">MIN</div>
+  										</div>
+  									</div>
+  									<div class="column">
+  										<div class="ui right labeled input">
+  										<input type="number" class="is-time-display" name="timer-set-sec" min="0" value="0">
+  										<div class="ui basic label">SEC</div>
+  										</div>
+  									</div>
+  								</div>
+						    </div>
+						   	<div class="ui center aligned buttons is-timebar-setting">
+						    	<div class="ui button is-timer-btn" option="s">
+						    	Start/Pause
+						    	</div>
+						    	<div class="ui button is-timer-btn" option="p">
+						    	Stop
+						    	</div>
+					    	</div>
+						  </div>
+						</div>
+			    	</div>
+			    	<div class="purple column">
+			      	Your Ad Here
+			    	</div>
+			  	</div>
+			</div>
+  		</div>
+		<div class="actions">
+		    <div class="ui black deny button">
+		      Cancel
+		    </div>
+		    <div class="ui positive  button">
+		      Apply
+		      <i class="fa fa-check" aria-hidden="true"></i>
+		    </div>
+	  	</div>
+	</div>
+	<div class="sidebar ui top menu visible">
+		<div class="header item">Imagination Station</div>
+		<a href="/home" class="item primary">
+			<i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+			Your Desk
+		</a>
+		<a class="item is-prefs-button">Preferences</a>
+		<a href="/logout" class="floated right item">Logout</a>
+		
+	</div>
+	<div class="pusher main">
+		<div class="uptop">
+			<div  id="is-countbar" class="ui tiny progress teal active">
+				<div class="bar"></div>
+			</div>
+			<button class="circular ui basic teal icon button menutoggle"> 
+				<i class="fa fa-angle-down fa-lg" aria-hidden="true"></i>
+			</button>
+			<div id="is-timer">
+				<div class="is-timer-wrapper">
+				    <span class="hours">00</span>
+				    <div class="smalltext">HR</div>
+				</div>
+				<div class="is-timer-wrapper">
+				    <span class="minutes">00</span>
+				    <div class="smalltext">M</div>
+				</div>
+				<div class="is-timer-wrapper">
+				    <span class="seconds">00</span>
+				    <div class="smalltext">S</div>
+				</div>
+			</div>
+
+		</div>
+  	<div  class="ui text container">
+			<div id="is-editor-wrapper" class="ui basic segment">
+				<div id="is-toolbar-wrapper" class="left ui rail">
+					<div id="is-editor-toolbar" class="ui sticky">
+						<button class="ql-header qll" value="1"></button>
+						<button class="ql-header qll" value="2"></button>
+						<button class="ql-bold qll"></button>
+						<button class="ql-italic qll"></button>
+						<button class="ql-underline qll"></button>
+						<button class="ql-strike qll"></button>
+						<button class="ql-list qll" value="ordered"></button>
+						<button class="ql-list qll" value="bullet"></button>
+						<select class="ql-align qll"></select>
+					</div>
+				</div>
+				<div id="is-editor"></div>
+			</div>
+		</div>
+	</div>
+<script src="@js/tags.js" type="text/javascript"></script>
+<script src="@js/my.js" type="text/javascript"></script>
+<script>is.app()</script>
+<!--<script src="js/tags.js" type="text/javascript"></script>
+<script src=" js/my.js" type="text/javascript"></script>-->
+</body>
+</html>
