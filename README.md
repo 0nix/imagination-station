@@ -4,6 +4,8 @@ A social network for authors, writers, and other assortments of people related t
 
 Built on Node.js, MongoDB, Redis, and Express.
 
+Frontend built with Semantic UI, RiotJS, Redux, and Quill.
+
 Created by me (0nix) and Julian Kindred.
 
 Licensed under GNU AGPLv3
